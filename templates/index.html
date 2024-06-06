@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% block head %}
+<style>
+        .image-container img {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.2);
+        }
+</style>
+{% endblock %}
+{% block body %}
+<div class="p-3 mb-2 bg-secondary-subtle text-secondary-emphasis">
+  <h1 style="text-align: center;"><b>MOVIES RECOMMENDER SYSTEM</b></h1>
+      <br>
+      <p style="text-align: center;">A movie recommendation system, or a movie recommender system,
+        </p>
+      <p style="text-align: center;">is an ML-based approach to filtering or predicting the users film preferences based on their past choices and behavior</p>
+
+      <form action="/recommend" method="POST" style="text-align: center;">
+  <div class="input-group flex-nowrap">
+    
+      <select class="form-select" id="movie" name="movie" aria-label="Default select example">
+              {% for j in movie_list %}
+              <option value="{{j}}">{{j}}</option>
+              {% endfor %}
+              
+      </select><br>
+    <button type="submit"  class="btn btn-dark">Recommend</button>
+    </form>
+  </div>
+</div>
+
+{% if status ==True %}
+  <h2 style="text-align: center;">These are the recomended movies</h2>
+   <br>
+<div class="p-3 mb-2 bg-body-secondary">  
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+            <div class="image-container">
+              <img src="{{poster[0]}}"c height="300" width="220">
+              <h2 class="text-lg text-gray-900 font-medium title-font mb-4">{{movies[0]}}</h2>
+            </div>
+        </div>
+        <div class="col">
+            <div class="image-container">
+              <img src="{{poster[1]}}" height="300" width="220">
+              <h2 class="text-lg text-gray-900 font-medium title-font mb-4">{{movies[1]}}</h2>
+            </div>
+        </div>
+        <div class="col">
+            <div class="image-container">
+              <img src="{{poster[2]}}" height="300" width="220">
+              <h2 class="text-lg text-gray-900 font-medium title-font mb-4">{{movies[2]}}</h2>
+            </div>
+        </div>
+        <div class="col">
+            <div class="image-container">
+              <img src="{{poster[3]}}" height="300" width="220">
+              <h2 class="text-lg text-gray-900 font-medium title-font mb-4">{{movies[3]}}</h2>
+            </div>
+        </div>
+
+        <div class="col">
+          <div class="image-container">
+            <img src="{{poster[4]}}" height="300" width="220">
+            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">{{movies[4]}}</h2>
+          </div>
+
+        </div>
+    
+  </div>
+</div>    
+{% endif %}
+<footer class="py-4 bg-dark text-white-50">
+  <div class="container text-center">
+    <ul style="text-align: center;" class="list-group">
+    
+      <li >Name : Rishabh  ,  Mobile Number : 8059699169</li>
+      <li >Mail : rishurajput9927@gmail.com</li>
+    </ul>
+  </div>
+</footer>
+
+{% endblock %}
+
+

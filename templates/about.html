@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block head %}
+<style>
+</style>
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <!-- About Section -->
+    <section id="about" class="mb-4">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 class="mt-4">About the Project</h2>
+          <p>This project is a movie recommendation system that suggests movies based on user preferences. It uses data from The Movie Database (TMDB) website, both the dataset and the API, to provide accurate recommendations.</p>
+        </div>
+      </div>
+    </section>
+
+<section id="tools" class="mb-4">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="mt-4">Tools Used</h2>
+        <ul>
+          <li><strong>Flask:</strong> A micro web framework for Python.</li>
+          <li><strong>TMDB API:</strong> Used to fetch movie data.</li>
+          <li><strong>TMDB Dataset:</strong> Provides comprehensive movie data for model training.</li>
+          <li><strong>Machine Learning Algorithms:</strong> Used to build the recommendation system.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Methodology Section -->
+  <section id="methodology" class="mb-4">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="mt-4">Methodology</h2>
+        <p>The recommendation system is built using the following methodologies:</p>
+        <ul>
+          <li><strong>Cosine Similarity:</strong> Measures the cosine of the angle between two non-zero vectors of an inner product space.</li>
+          <li><strong>Count Vectorizer:</strong> Converts a collection of text documents to a matrix of token counts.</li>
+          <li><strong>Porter Stemmer:</strong> A process for removing the commoner morphological and inflexional endings from words in English.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}
